@@ -33,8 +33,8 @@ RedTail VWAP Fib Bands adds structure around the VWAP anchor — mean-reversion 
 
 ## How It Differs From Standard VWAP
 
-- **Three band pairs** (±1σ, ±2σ, ±3σ) that expand and contract based on the volume-weighted standard deviation from MIDAS
-- **Fibonacci sub-bands** interpolated between MIDAS and the ±3σ extremes, providing intermediate reference levels at ratios you define
+- **Three band pairs** (±1σ, ±2σ) that expand and contract based on the volume-weighted standard deviation from MIDAS
+- **Fibonacci sub-bands** interpolated between MIDAS and the ±2σ extremes, providing intermediate reference levels at ratios you define
 - **Multiple anchor methods** — Session, Timeframe, or fixed Date — so you're not limited to a single daily reset
 - **Graduated fill zones** that create a visual heat map of volatility zones
 
@@ -56,31 +56,17 @@ RedTail VWAP Fib Bands adds structure around the VWAP anchor — mean-reversion 
 
 **±2σ (Band 2)** — The extension zone. A close beyond ±2σ signals that the market is trending and has moved meaningfully away from the volume-weighted mean. Default multiplier: 2.0.
 
-**±3σ (Band 3)** — The extreme zone. A close beyond ±3σ is a statistically rare event — potential exhaustion or climax move. Default multiplier: 3.0.
-
 All multipliers are independently configurable.
 
 ---
 
 ## Fibonacci Sub-Bands
 
-In addition to the σ bands, the indicator plots Fibonacci-ratio levels interpolated between the MIDAS line and the ±3σ extremes. These give you intermediate reference levels between the standard deviation bands.
+In addition to the σ bands, the indicator plots Fibonacci-ratio levels interpolated between the MIDAS line and the ±2σ extremes. These give you intermediate reference levels between the standard deviation bands.
 
 The default levels are 0.333, 0.5, 0.667, and 0.786, which correspond approximately to: ±1σ, the midpoint between ±1σ and ±2σ, ±2σ, and a deep extension toward ±3σ.
 
 Enter any comma-separated ratios you want — add more, remove some, or change the values entirely. Each ratio is plotted symmetrically above and below MIDAS.
-
----
-
-## Fill Zones
-
-Three graduated fill zones between the band pairs create a visual heat map:
-
-- **Inner zone** (MIDAS ↔ ±1σ) — Full opacity
-- **Middle zone** (±1σ ↔ ±2σ) — 60% of base opacity
-- **Outer zone** (±2σ ↔ ±3σ) — 35% of base opacity
-
-Base fill opacity is configurable (default: 15%). The fills use polygon-traced geometry that follows the actual band lines bar by bar.
 
 ---
 
@@ -91,7 +77,6 @@ Each element has its own independent Stroke setting (color, dash style, width):
 - **MIDAS Line** — Default: DodgerBlue, Solid, width 2
 - **Band 1 (±1σ)** — Default: Red, Solid, width 2
 - **Band 2 (±2σ)** — Default: Red, Dash, width 1
-- **Band 3 (±3σ)** — Default: OrangeRed, Dash, width 1
 - **Fibonacci Bands** — Default: Gray, Dot, width 1
 
 Optional right-edge labels for every level — σ notation for bands (e.g., "+1.0σ", "-2.0σ") and decimal notation for fibs (e.g., "0.500", "0.786").
@@ -100,7 +85,7 @@ Optional right-edge labels for every level — σ notation for bands (e.g., "+1.
 
 ## Plot Outputs
 
-All core values are exposed as plot outputs for use in the data box, crosshair readout, strategies, or other indicators: MIDAS, Upper1/Lower1, Upper2/Lower2, Upper3/Lower3, and all Fibonacci levels (up and down).
+All core values are exposed as plot outputs for use in the data box, crosshair readout, strategies, or other indicators: MIDAS, Upper1/Lower1, Upper2/Lower2, and all Fibonacci levels (up and down).
 
 ---
 
