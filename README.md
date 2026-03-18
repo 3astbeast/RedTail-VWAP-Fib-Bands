@@ -17,9 +17,9 @@
 
 ---
 
-## Credit
-
-[@_hawkeye_13](https://twitter.com/_hawkeye_13)** (RedTail Indicators).
+<p align="center">
+  <img src="https://raw.githubusercontent.com/3astbeast/RedTail-VWAP-Fib-Bands/refs/heads/main/MNQ_1Minute_20260318_123124.png" width="1000" alt="RedTail Toolbar Screenshot"/>
+</p>
 
 ---
 
